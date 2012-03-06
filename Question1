@@ -1,12 +1,12 @@
 /**
- * @(#)A1Prob1.java
+ * @(#)Question1.java
  * @author Mohamed Attia 
  * @version 1.00 2012/3/6
  */
 import java.lang.*;
 import java.util.*;
 
-public class A1Prob1 {
+public class Question1 {
     public static void main (String []args) {
       
 		// Scanner to take input string.		    	
