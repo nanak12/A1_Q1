@@ -1,0 +1,54 @@
+/**
+ * @(#)A1Prob1.java
+ * @author Mohamed Attia 
+ * @version 1.00 2012/3/6
+ */
+import java.lang.*;
+import java.util.*;
+
+public class A1Prob1 {
+    public static void main (String []args) {
+      
+		// Scanner to take input string.		    	
+    	Scanner kb = new Scanner (System.in);
+		System.out.print("Enter the Binary value (32 bits): ");
+		String str = kb.nextLine();
+		
+		// Checking input string length.
+		  if( str.length()<32 || str.length()>32 ){
+				System.out.println("Sorry these are NOT 32 bits. Try again.");
+				System.exit(0);   
+		}   
+		
+		// Checking input string if they are only 0s and 1s.
+		boolean checkContains1 = str.contains("0");
+		boolean checkContains2 = str.contains("1");
+		if ( checkContains1 == false || checkContains2 == false ){
+			System.out.println("This is not a binary number. Try again.");
+			System.exit(0);
+		}
+	
+		// Getting Integer value from input string.
+		int integer = Integer.parseInt(str,2);
+		
+		// Getting float value from integer.
+		Integer intObj = new Integer(integer);
+		float f = intObj.floatValue();
+		
+		// Getting String value (ASCII) from input String 0s & 1s .
+		String stringValue="";
+		// Spliting the string.. for example: [0, 7], [9, 16].. etc
+		char nextChar;
+			for(int i = 0; i < str.length()-8; i += 9)
+			{
+	    		 nextChar = (char)Integer.parseInt(str.substring(i, i+7), 2);
+	    		 stringValue += nextChar;
+			}
+			
+		// Print output
+		System.out.println("Integer:    "+ integer);
+		System.out.println("Float:    "+ f);
+		System.out.println("String:    "+stringValue );
+		
+    }
+}
